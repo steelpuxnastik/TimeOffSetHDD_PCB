@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name timeoffset-rescue)(type Legacy)(uri ${KIPRJMOD}/timeoffset-rescue.lib)(options "")(descr ""))
+  (lib (name 7204)(type Legacy)(uri "D:/Google Диск/sprint/timeoffset/Transistor_FET_my.lib")(options "")(descr ""))
+)
