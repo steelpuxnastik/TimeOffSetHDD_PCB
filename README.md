@@ -13,3 +13,4 @@ Parts used:
 6. Pin header 2x3pin 2.54mm for SPI MCU programming (the arrangement of contacts is duplicated from Arduino ICSP)
 
 Result:
+![Иллюстрация к проекту](https://github.com/steelpuxnastik/TimeOffSetHDD_PCB/blob/master/images/1.JPG)
