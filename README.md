@@ -14,3 +14,17 @@ Parts used:
 
 Result:
 ![Иллюстрация к проекту](https://github.com/steelpuxnastik/TimeOffSetHDD_PCB/blob/master/images/1.JPG)
+![Иллюстрация к проекту](https://github.com/steelpuxnastik/TimeOffSetHDD_PCB/blob/master/images/2.JPG)
+![Иллюстрация к проекту](https://github.com/steelpuxnastik/TimeOffSetHDD_PCB/blob/master/images/3.JPG)
+![Иллюстрация к проекту](https://github.com/steelpuxnastik/TimeOffSetHDD_PCB/blob/master/images/4.JPG)
+
+Program can be flashed through Arduino IDE as Arduino SPI programmer.
+You need to download this archive ( https://github.com/orlv/at13/archive/master.zip ) and unzip it into your default folder with scatches, usually it's "\Documents\Arduino\hardware\" (in result it must be something like this "C:\Users\Администратор\Documents\Arduino\hardware\attiny13\avr\cores\core13").
+Then flash your Arduino with scatch from Arduino IDE Samples - ArduinoISP
+Afrer that connect ATtiny13 to Arduino similar to the ICSP block on Arduino, but last RESET pin on device connect to pin 10 on Arduino.
+![Иллюстрация к проекту](https://github.com/steelpuxnastik/TimeOffSetHDD_PCB/blob/master/images/5.JPG)
+Choose the board Attiny13 in menu Tools and I would recommend to choose "Frequency: 128kHz", because we do not need more - MCU literally will do nothing more, but it will help tremendously reduce its consumption of power.
+![Иллюстрация к проекту](https://github.com/steelpuxnastik/TimeOffSetHDD_PCB/blob/master/images/6.JPG)
+![Иллюстрация к проекту](https://github.com/steelpuxnastik/TimeOffSetHDD_PCB/blob/master/images/7.JPG)
+Then choose "Arduino as ISP" in "Tools - Programmer" (or "Arduino as ISP (ATmega32U4)" if you have Leonardo like me, simply on "Arduino as ISP" my Leonardo is not flashing MCU) press "Burn bootloader". This will flash to MCU settings that we selected earlier.
+After that you can flash the programm.
