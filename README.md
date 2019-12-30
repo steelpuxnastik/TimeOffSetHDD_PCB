@@ -3,7 +3,7 @@ Old notebook Acer 5560G has problem in using second HDD, which connects to the s
 
 But the above scheme has several disadvantages, some of which inability to reboot (notebook will not pass POST) and some bulkiness and design complexity. In addition, the author of the above article himself says that he offers all this as an example, confirming that the method itself is working and that simpler implementations are possible.
 
-That is why I tried to make much smaller and more controlled scheme on Attiny13A and transistor IRF7204, which controls power supply through the transistor (transistor opens in 10 sec after applying power to the MCU). 
+That is why I tried to make much smaller and more controlled scheme on Attiny13A and transistor IRF7204, which controls power supply through the transistor (transistor opens in 10 sec after applying power to the MCU and turning on the second HDD). 
 Parts used:
 1. ATTINY13A-SU
 2. IRF7204 Transistor
