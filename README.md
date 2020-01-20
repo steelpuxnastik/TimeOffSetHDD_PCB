@@ -3,6 +3,8 @@ Old notebook Acer 5560G has problem in using second HDD, which connects to the s
 
 But the above scheme has several disadvantages, some of which inability to reboot (notebook will not pass POST) and some bulkiness and design complexity. In addition, the author of the above article himself says that he offers all this as an example, confirming that the method itself is working and that simpler implementations are possible.
 
+Field notes: as I can see, the problem lies in the fact that the BIOS, in principle, is not provided for booting with two hard drives, since there is only one HDD0 and when notebook detects second HDD - it cannot determine what exactly HDD is primary and what HDD is second because BIOS knows only 1 HDD it can operate, so after that it has problem with POST, because it do not knows how to solve that problem.
+
 That is why I tried to make much smaller and more controlled scheme on Attiny13A and transistor IRF7204, which controls power supply through the transistor (transistor opens in 10 sec after applying power to the MCU and turning on the second HDD). 
 Parts used:
 1. ATTINY13A-SU
@@ -26,5 +28,10 @@ Afrer that connect ATtiny13 to Arduino similar to the ICSP block on Arduino, but
 Choose the board Attiny13 in menu Tools and I would recommend to choose "Frequency: 128kHz", because we do not need more - MCU literally will do nothing more, but it will help tremendously reduce its consumption of power.
 ![Иллюстрация к проекту](https://github.com/steelpuxnastik/TimeOffSetHDD_PCB/blob/master/images/6.JPG)
 ![Иллюстрация к проекту](https://github.com/steelpuxnastik/TimeOffSetHDD_PCB/blob/master/images/7.JPG)
+
 Then choose "Arduino as ISP" in "Tools - Programmer" (or "Arduino as ISP (ATmega32U4)" if you have Leonardo like me, simply on "Arduino as ISP" my Leonardo is not flashing MCU) press "Burn bootloader". This will flash to MCU settings that we selected earlier.
 After that you can flash the programm.
+
+![Иллюстрация к проекту](https://github.com/steelpuxnastik/TimeOffSetHDD_PCB/blob/master/images/IMG_20200120_005445.jpg)
+![Иллюстрация к проекту](https://github.com/steelpuxnastik/TimeOffSetHDD_PCB/blob/master/images/IMG_20200120_005646.jpg)
+Device works well only if notebook starts from total turn off (best variants is to turn off by button after set "restart" in Windows, because notebook will not start after that, so you need to turn it off by button and then turn it on and then notebook will start well with second HDD). Delay time was shorted to 2 sec - it's minimum delay time needed to start.
