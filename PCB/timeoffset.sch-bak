@@ -112,9 +112,6 @@ F 3 "~" H 4700 2850 50  0001 C CNN
 	1    4700 2850
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	4700 2050 3900 2050
-Connection ~ 3900 2050
 $Comp
 L Connector_Generic:Conn_02x03_Odd_Even SPI_In1
 U 1 1 5DE00932
@@ -131,7 +128,7 @@ Wire Wire Line
 Wire Wire Line
 	5950 2800 5950 3450
 Wire Wire Line
-	5950 3450 3900 3450
+	5950 3450 4700 3450
 Wire Wire Line
 	5400 2950 5400 2800
 Wire Wire Line
@@ -144,8 +141,6 @@ Wire Wire Line
 	5400 2600 5450 2600
 Wire Wire Line
 	6100 2400 6100 2600
-Wire Wire Line
-	4700 2400 4700 2050
 Connection ~ 4700 2400
 Wire Wire Line
 	4700 2400 6100 2400
@@ -214,7 +209,7 @@ Wire Wire Line
 Wire Wire Line
 	3500 1300 3500 1600
 Wire Wire Line
-	3500 1600 2550 1600
+	3500 1600 3275 1600
 Wire Wire Line
 	2550 1600 2550 1850
 Connection ~ 2550 1850
@@ -241,4 +236,40 @@ Wire Wire Line
 Connection ~ 3900 3600
 Wire Wire Line
 	3900 3600 3900 3650
+$Comp
+L Device:D D1
+U 1 1 5E2E145B
+P 3125 1600
+F 0 "D1" H 3125 1816 50  0000 C CNN
+F 1 "D" H 3125 1725 50  0000 C CNN
+F 2 "Diode_THT:D_5KP_P7.62mm_Vertical_AnodeUp" H 3125 1600 50  0001 C CNN
+F 3 "~" H 3125 1600 50  0001 C CNN
+	1    3125 1600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2975 1600 2550 1600
+Wire Wire Line
+	4700 1600 3500 1600
+Wire Wire Line
+	4700 1600 4700 2400
+Connection ~ 3500 1600
+$Comp
+L Device:C_Small C3
+U 1 1 5E2E2335
+P 4700 3225
+F 0 "C3" H 4792 3271 50  0000 L CNN
+F 1 "0.01" H 4792 3180 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 4700 3225 50  0001 C CNN
+F 3 "~" H 4700 3225 50  0001 C CNN
+	1    4700 3225
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4700 2950 4700 3125
+Wire Wire Line
+	4700 3325 4700 3450
+Connection ~ 4700 3450
+Wire Wire Line
+	4700 3450 3900 3450
 $EndSCHEMATC
